@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+    restart: unless-stopped
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+    volumes:
+      - ollama:/root/.ollama
+
+  engine:
+    image: python:3.11-slim
+    working_dir: /app
+    # M1-safe: install CPU-only torch first, then deps; keep container alive
+    command: bash -lc "pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && pip install -r requirements.txt && tail -f /dev/null"
+    volumes:
+      - ../:/app
+    environment:
+      - OLLAMA_URL=${OLLAMA_URL:-http://ollama:11434}
+      - GEN_MODEL=${GEN_MODEL:-llama3.1:8b-instruct}
+      - EMB_MODEL=${EMB_MODEL:-BAAI/bge-small-en-v1.5}
+      - DB_DIR=${DB_DIR:-engine/.chroma}
+      - CONTENT_DIR=${CONTENT_DIR:-content}
+    depends_on:
+      - ollama
+
+volumes:
+  ollama: {}

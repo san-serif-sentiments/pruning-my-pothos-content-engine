@@ -1,0 +1,14 @@
+TASK: Draft a {content_type}.
+TITLE: {title}
+AUDIENCE: {audience}
+GOAL: {goal}
+TONE: {tone}
+
+STRUCTURE CONSTRAINTS:
+- H1 exactly once with the title
+- H2: Overview, Why It Matters, Prerequisites, Steps, Examples, FAQs, References
+- Use bullet points for steps; keep sentences short
+- Cite sources inline like [1], [2], and list them under References with URLs
+
+CONTEXT:
+{context}

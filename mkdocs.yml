@@ -1,0 +1,7 @@
+site_name: PruningMYPothos Content Artifacts (Local Preview)
+nav:
+  - Home: index.md
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition

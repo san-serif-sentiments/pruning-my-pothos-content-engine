@@ -1,0 +1,18 @@
+type: blog
+title: How to Prune Pothos for Healthier Growth
+slug: prune-pothos-healthier-growth
+audience: beginner plant owners
+goal: simple, safe pruning steps
+tone: direct
+tags: [houseplants, pothos, pruning]
+social: true
+publish:
+  status: draft              # draft | publish | future
+  category_ids: []           # optional WordPress category IDs
+  date: 2025-08-30T09:30:00+05:30
+images:
+  mode: cc0
+  query: pothos pruning closeup
+sources:
+  allow:
+    - pruningmypothos.com
