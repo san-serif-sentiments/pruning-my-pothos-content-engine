@@ -1,4 +1,4 @@
-# Agentic Content Engine (M1-friendly)
+# Agentic Content Engine (Macbook M1-friendly)
 
 Opinionated, small-model-first content engine that:
 - Indexes your existing content (Chroma + bge-small),
